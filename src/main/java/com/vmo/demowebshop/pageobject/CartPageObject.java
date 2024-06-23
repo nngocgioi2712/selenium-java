@@ -58,12 +58,13 @@ public class CartPageObject extends BasePage {
         Log.allure("Verify: Item is removed from shopping cart");
         boolean check = true;
         for (WebElement element : getListWebElements(driver, CartPageUI.PRODUCT_ITEMS)) {
-            if(getTextElement(getWebElement(element, CartPageUI.PRODUCT_NAME)).equals(removedProductName)) {
+            if (getTextElement(getWebElement(element, CartPageUI.PRODUCT_NAME)).equals(removedProductName)) {
                 check = false;
                 break;
             }
         }
         Assert.assertTrue(check);
+        softAssert.assertAll();
         return this;
     }
 

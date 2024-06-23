@@ -61,7 +61,6 @@ public class HeaderObject extends BasePage {
         Collections.sort(actualBookInCart);
         Collections.sort(addedBookList);
         Assert.assertEquals(actualBookInCart, addedBookList);
-        softAssert.assertAll();
         return this;
     }
 

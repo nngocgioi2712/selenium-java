@@ -23,8 +23,7 @@ public class BooksTest extends BaseTest {
                 .verifyMessageIsDisplay("The product has been added to your shopping cart")
                 .verifyTotalItemsInShoppingCartIncreases(2)
                 .hoverToShoppingCart()
-                .verifyProductAddedInShoppingCart()
-                .assertAll();
+                .verifyProductAddedInShoppingCart();
     }
 }
 

@@ -6,7 +6,6 @@ import com.vmo.demowebshop.utils.AllureManager;
 import com.vmo.demowebshop.utils.TestListener;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.*;
-import org.testng.asserts.SoftAssert;
 
 import java.io.IOException;
 
@@ -14,8 +13,6 @@ import java.io.IOException;
 
 public class BaseTest {
     protected WebDriver driver;
-
-    protected SoftAssert softAssert;
 
     @Parameters({"browser"})
     @BeforeSuite
@@ -37,12 +34,11 @@ public class BaseTest {
         driver = getBrowserDriver(browser, modeRun);
 
         driver.get("https://demowebshop.tricentis.com/");
-
-        softAssert = new SoftAssert();
     }
     @AfterMethod
     public void tearDown() {
         driver.quit();
+        BasePage.assertAll();
     }
 
 

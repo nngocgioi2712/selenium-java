@@ -19,7 +19,7 @@ public class BasePage {
     private WebDriverWait explicitWait;
     private JavascriptExecutor jsExecutor;
     private Actions actions;
-    protected SoftAssert softAssert = new SoftAssert();
+    protected static SoftAssert softAssert = new SoftAssert();
 
     public void openUrl(WebDriver driver, String url) {
         driver.get(url);
@@ -572,7 +572,7 @@ public class BasePage {
         explicitWait.until(ExpectedConditions.elementToBeSelected(getWebElement(driver, locator, params)));
     }
 
-    public void assertAll() {
+    public static void assertAll() {
         softAssert.assertAll();
     }
 }

@@ -23,7 +23,6 @@ public class CartTest extends BaseTest {
                 .verifyInCartPage()
                 .chooseTheProductToBeRemove()
                 .clickUpdateCartBtn()
-                .verifyItemRemoved()
-                .assertAll();
+                .verifyItemRemoved();
     }
 }

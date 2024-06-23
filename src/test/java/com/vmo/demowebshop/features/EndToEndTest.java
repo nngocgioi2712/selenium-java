@@ -47,7 +47,7 @@ public class EndToEndTest extends BaseTest {
                 .verifyInCheckoutPage()
                 .clickCheckoutAsGuestButton()
                 .verifyStepIsExpended("Billing address")
-                .fillInformationBillingAddress(firstName, lastName, email, country, city, address1, zipcode, phoneNumber)
+                .fillInformationBillingAddress(firstName, lastName, email, "Viet Nam", city, address1, zipcode, phoneNumber)
                 .verifyStepIsExpended("Payment method")
                 .verifyPaymentMethodSelected("Cash On Delivery")
                 .clickContinueBtnOnStep("Payment method")
@@ -58,7 +58,6 @@ public class EndToEndTest extends BaseTest {
                 .clickConfirmBtn()
                 .verifyInCheckoutCompletedPage()
                 .clickContinueBtn()
-                .verifyInHomepage()
-                .assertAll();
+                .verifyInHomepage();
     }
 }
