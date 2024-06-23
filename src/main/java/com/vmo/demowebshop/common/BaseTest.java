@@ -31,6 +31,7 @@ public class BaseTest {
     @BeforeMethod
     @Parameters({"browser", "modeRun"})
     public void setUp(@Optional("CHROME") String browser, @Optional("LOCAL") String modeRun) {
+        BasePage.setSoftAssert();
         driver = getBrowserDriver(browser, modeRun);
 
         driver.get("https://demowebshop.tricentis.com/");

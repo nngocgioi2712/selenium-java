@@ -64,7 +64,6 @@ public class CartPageObject extends BasePage {
             }
         }
         Assert.assertTrue(check);
-        softAssert.assertAll();
         return this;
     }
 
